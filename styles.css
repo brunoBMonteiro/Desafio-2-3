@@ -105,30 +105,27 @@ footer a:hover {
 }
 
 .cards {
-    max-width: 900px;
-    margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
+    max-width: 1024px;
+    margin: 0 auto;
 }
 
 .card {
     background-color: #202024;
     border-radius: 8px;
+    cursor: pointer;
 }
 
 .card:hover {
     cursor: pointer;
 }
 
-.card_image-container {
-    width: 300px;
-}
-
-.card_image-container img {
+.card_image {
     width: 100%;
     border: 0;
-    background-origin: 8px 8px 0 0;
+    border-radius: 8px 8px 0 0;
 }
 
 .card_content,
@@ -137,9 +134,8 @@ footer a:hover {
 }
 
 .card_content p,
-.card_info p{
+.card_info p {
     margin: 0;
-    color: white;
 }
 
 .card_info {
@@ -155,11 +151,10 @@ footer a:hover {
 
 .card_info i {
     margin-right: 4px;
-
 }
 
 .card_author {
-    background-color: #7159c1;
+    background-color: #8257e6;
     color: #fff;
     filter: brightness(90%);
     border-radius: 20px;
@@ -167,27 +162,28 @@ footer a:hover {
     justify-content: center;
 }
 
-
-.card_time.material-icons {
-    align-items: center;
-}
-
 .modal-overlay {
-    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
     width: 100%;
     height: 100%;
-    position: fixed;
+    background-color: rgba(0, 0, 0, 0.7);
     top: 0;
     opacity: 0;
     visibility: hidden;
 }
 
 .modal {
-    background-color: white;
-    width: 85%;
-    height: 85%;
-    margin: 5vh auto;
     position: relative;
+    width: 75%;
+    height: 75%;
+    background-color: white;
+    margin: 12.5vh auto;
+}
+
+.modal.maximized {
+    width: 100%;
+    height: 100%;
+    margin: 0;
 }
 
 .modal-overlay.active {
@@ -198,25 +194,29 @@ footer a:hover {
 .modal .close-modal {
     color: black;
     position: absolute;
-    right: 15px;
     top: 8px;
+    right: 8px;
     cursor: pointer;
 }
 
-.modal .maximize-modal i{
+.modal .maximize-modal {
     color: black;
     position: absolute;
-    right: 45px;
     top: 10px;
+    right: 40px;
     cursor: pointer;
+}
+
+.modal .maximize-modal i {
     font-size: 20px;
 }
 
-
-iframe {
-    width: 100%;
-    height: 90%;
+.modal-content iframe {
     position: absolute;
-    top: 5%;
+    width: 100%;
+    height: 93%;
+    top: 7%;
 }
+
+
 

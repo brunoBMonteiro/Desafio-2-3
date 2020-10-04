@@ -1,16 +1,30 @@
 const modalOverlay = document.querySelector(".modal-overlay")
-const cards = document.querySelectorAll(".card")
 const modal = document.querySelector(".modal")
+const cards = document.querySelectorAll(".card")
+
 
 for(let card of cards){
     card.addEventListener("click", function(){
-        modalOverlay.classList.add("active")
-        const blogId = card.getAttribute("id")
+        const blogId = card.getAttribute("id");
         modalOverlay.querySelector("iframe").src= `https://blog.rocketseat.com.br/${blogId}`
+        modalOverlay.classList.add("active")
     });
+        
+        
 }
 
 document.querySelector(".close-modal").addEventListener("click", function(){
     modalOverlay.classList.remove("active")
-})
-    
+    modal.classList.remove("maximized");
+    modalOverlay.querySelector("iframe").src = ""
+});
+
+document.querySelector(".maximize-modal").addEventListener("click", function(){
+    if (modal.classList.contains("maximized")) {
+        modal.classList.remove("maximized");
+    } else {
+        modal.classList.add("maximized");
+    }
+});
+
+ 
